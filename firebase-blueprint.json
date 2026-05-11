@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User profile and settings",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "favorites": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "createdAt": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "favoriteGenres": { "type": "array", "items": { "type": "string" } },
+        "stats": {
+          "type": "object",
+          "properties": {
+             "readingTimeMinutes": { "type": "number" },
+             "totalDownloads": { "type": "number" }
+          }
+        }
+      },
+      "required": ["email", "name", "favorites", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profile data"
+    }
+  }
+}

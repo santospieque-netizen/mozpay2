@@ -1,0 +1,19 @@
+[[redirects]]
+  # Redireciona todas as rotas para o index.html nas subpastas
+  from = "/:sub/:path*"
+  to = "/:sub/index.html"
+  status = 200
+
+  [[redirects]]
+  # Redireciona todas as rotas para o index.html na raiz
+  from = "/:path*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  publish = "dist"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

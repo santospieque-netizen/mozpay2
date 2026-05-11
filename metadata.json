@@ -1,0 +1,5 @@
+{
+  "name": "MozBooks",
+  "description": "Plataforma digital de livros gratuitos com categorias, leitor de PDF e sistema de favoritos.",
+  "requestFramePermissions": []
+}
